@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["docer`.csproj", "docer`/"]
-RUN dotnet restore "docer`/docer`.csproj"
+RUN dotnet restore "docer`.csproj"
 COPY . .
 WORKDIR "/src/docer`"
 RUN dotnet build "docer`.csproj" -c Release -o /app/build
